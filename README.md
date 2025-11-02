@@ -1,4 +1,5 @@
 # SkillBridge
+
 ---
 
 ````markdown
@@ -125,7 +126,7 @@ Admins can:
 
 **Team SkillBridge – SRM Institute of Science and Technology**
 
-* **Gladwin Benjamin** – Product Owner
+* **Gladwin Benjamin** – Product Owner & Developer
 * **Sai Srikar** – Scrum Master
 * **Vijval N** – Developer
 * **Aditya** – Developer
@@ -142,8 +143,6 @@ This project is licensed under the **MIT License** – feel free to use and impr
 
 ```
 
----
 
-Would you like me to include **badges (e.g., build status, license, live demo, tech stack icons)** at the top to make it more visually appealing for your GitHub profile?
-```
+
 
