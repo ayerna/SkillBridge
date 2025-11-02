@@ -5,7 +5,7 @@
 ````markdown
 # 🧩 SkillBridge – A Peer-to-Peer Skill Exchange Platform for Students
 
-SkillBridge is a **Next.js** web platform that enables students to **offer**, **request**, and **exchange** skills with one another in an interactive and collaborative environment.  
+SkillBridge is a ***Next.js*** web platform that enables students to **offer**, **request**, and **exchange** skills with one another in an interactive and collaborative environment.  
 The platform integrates **Firebase** for authentication and database management, and **SendGrid** for OTP-based email verification.  
 It also includes an **admin dashboard** to monitor activity, manage users, and view analytics.
 
