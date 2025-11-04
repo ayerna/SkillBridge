@@ -52,12 +52,6 @@ export default function VerifyEmailPage() {
     setError("")
 
     try {
-      if (email !== ADMIN_OTP_EMAIL) {
-        // This page should not be reached by non-admin users, but just in case
-        router.push("/dashboard")
-        return
-      }
-
       if (!otp || otp.length !== 6) {
         setError("Please enter a valid 6-digit code")
         setLoading(false)
@@ -72,19 +66,24 @@ export default function VerifyEmailPage() {
         return
       }
 
-      if (userId) {
-        const userRef = doc(db, "users", userId)
-        await updateDoc(userRef, {
-          emailVerified: true,
-          verifiedAt: new Date().toISOString(),
-        })
+      if (!userId) {
+        setError("User ID not found. Please sign up again.")
+        setLoading(false)
+        return
       }
+
+      const userRef = doc(db, "users", userId)
+      await updateDoc(userRef, {
+        emailVerified: true,
+        verifiedAt: new Date().toISOString(),
+      })
 
       setSuccess(true)
       setTimeout(() => {
         router.push("/dashboard")
       }, 2000)
     } catch (error: any) {
+      console.log("[v0] OTP verification error:", error.message)
       setError(error.message || "Verification failed. Please try again.")
     } finally {
       setLoading(false)
