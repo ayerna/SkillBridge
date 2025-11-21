@@ -51,8 +51,8 @@ export default function LoginPage() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
       const user = userCredential.user
 
-      const isTestAccount = TEST_ACCOUNTS.some((acc) => acc.email === email)
-      if (email !== ADMIN_OTP_EMAIL && !isTestAccount) {
+      const testAccount = isTestAccount(email)
+      if (email !== ADMIN_OTP_EMAIL && !testAccount) {
         const { generateOTP, storeOTP } = await import("@/lib/otp-service")
         const { sendOTPEmail } = await import("@/lib/email-service")
 
@@ -180,6 +180,22 @@ export default function LoginPage() {
               </div>
             </TabsContent>
           </Tabs>
+
+          {/* Demo credentials block */}
+          <div className="mt-6 p-3 bg-gray-100 dark:bg-gray-800 rounded text-sm">
+            <div className="font-medium mb-2">Demo accounts</div>
+            <ul className="list-none text-xs space-y-1">
+              <li>
+                <span className="font-medium">Email:</span> test1@test.com
+                <span className="ml-3 font-medium">Password:</span> test@123
+              </li>
+              <li>
+                <span className="font-medium">Email:</span> test2@test.com
+                <span className="ml-3 font-medium">Password:</span> test@123
+              </li>
+            </ul>
+            <p className="mt-2 text-xs text-gray-600 dark:text-gray-400">Use these accounts to demo the app. No OTP required for test accounts.</p>
+          </div>
 
           <div className="mt-4 text-center text-sm">
             {"Don't have an account? "}
