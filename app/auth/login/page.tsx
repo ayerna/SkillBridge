@@ -189,10 +189,6 @@ export default function LoginPage() {
                 <span className="font-medium">Email:</span> test1@test.com
                 <span className="ml-3 font-medium">Password:</span> test@123
               </li>
-              <li>
-                <span className="font-medium">Email:</span> test2@test.com
-                <span className="ml-3 font-medium">Password:</span> test@123
-              </li>
             </ul>
             <p className="mt-2 text-xs text-gray-600 dark:text-gray-400">Use these accounts to demo the app. No OTP required for test accounts.</p>
           </div>
